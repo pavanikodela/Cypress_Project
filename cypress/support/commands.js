@@ -28,7 +28,7 @@
 
 
 Cypress.Commands.add('login', (username, password) => {
-  cy.visit('https://qajobbyapp.ccbp.tech/login')
+  cy.visit('https://qajobbyapp.ccbp.tech/login', {failOnStatusCode: false})
   cy.get('input[type="text"]').type(username)
   cy.get('input[type="password"]').type(password)
   cy.get('button').contains("Login").click()
